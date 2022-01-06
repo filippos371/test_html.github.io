@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>PageB</title>
+</head>
+<body>
+    <h1>PageB</h1>
+    <a href="../main_page.html">Go to main page</a>
+    <p>Welcome to PageB my friend</p>
+
+    <!-- Table -->
+    <table>
+        <tr>
+            <td>A</td>
+            <td>3</td>
+            <td>340</td>
+        </tr>
+        <tr>
+            <td>B</td>
+            <td>5</td>
+            <td>800</td>
+        </tr>
+        <tr>
+            <td>
+                <img src="../imgs/stala (3).jpg" alt="Stala3" width=10 height=20>
+            </td>
+            <td>8</td>
+            <td>1000</td>
+        </tr>
+    </table>
+
+    <p></p>
+    <p></p>
+    <table>
+        <caption>
+            Tests ana deigma
+        </caption>
+        <thead>
+            <tr>  <!-- Header -->
+                <th>A</th> <th>B</th><th>C</th><th>D</th>
+            </tr>
+        </thead>
+
+        <h4>Another way</h4>
+        <tbody>  <!-- Body of table-->
+            <tr>
+                <th>n=10</th><th>n=20</th><th>n=50</th><th>n=100</th>
+            </tr>
+            <tr>
+                <th>n=10</th><th>n=20</th><th>n=50</th><th>n=100</th>
+            </tr>
+            <tr>
+                <th>n=10</th><th>n=20</th><th>n=50</th><th>n=100</th>
+            </tr>
+        </tbody>
+
+        <tfoot>
+            <th></th><th>M.O.= </th> <th>30</th><th></th>
+        </tfoot>
+    </table>
+
+    <h4>Another way</h4>
+    <table>
+        <colgroup>
+            <col>
+            <col>
+            <col class="col_style"> <!-- adding class to identify with CSS-->
+        </colgroup>
+
+        <tr>
+            <th scope="row">44</th> <!-- Scope values (row or col)-->
+            <td>A</td>
+            <td>B</td>
+        </tr>
+        <tr>
+            <td>100</td><td headers="44">400</td>
+        </tr>
+    </table>
+
+    <article>
+        <h2>User Inputs <b> FORMS</b></h2>
+
+        <p>Απλό κείμενι</p>
+        <form action="/data_send/" method="POST"> <!-- method = "GET" or "POST". Get not for personal data-->
+            <label for="id_first_name">Όνομα</label> 
+            <input type="text" id="id_first_name" name="first_name" minlength="3" maxlength="30" placeholder="Filippos">
+            <br>
+            
+            <label for="id_last_name">Επώνυμο:</label>
+            <input type="text" id="id_last_anme name="last_name" minlength="3" maxlength="30" placeholder="Kontogiannis">
+            <br>
+            <label for="id_age">Age:</label>
+            <!-- pattern all possible entries (regural expressions) -->
+            <input type="text" id="id_age" minlength="1" maxlength="3" placeholder="18" required=True pattern="[0-9]">(*)
+            <br>
+            <label for="id_pass">Password:</label>
+            <input type="password" id="id_pass" minlength="1" maxlength="30" required=True>(*)
+            <br>
+            <label for="id_email">Email:</label>
+            <input type="email" id="id_email" minlength="1" maxlength="30" required=True>(*)
+            <br>
+            (*) Mandatory fields
+            <br>
+            <input type="submit" value="Απόστoλή"> <input type="reset" value="Καθαρισμός">
+        </form>
+        <br>
+
+        <form action="/data_send/" method="post">
+            <label for="id_date">Date:</label>
+            <input type="date" id="id_date" name="date" min="2020-11-01" value="2021-03-26">
+            <br>
+            <label for="id_time">Date:</label>
+            <input type="time" id="id_time" name="time" value="23:06">
+            <br>
+            <label for="id_datetime">Date:</label>
+            <input type="datetime-local" id="id_datetime" name="datetime" value="2021-03-26 23:06">
+            <br>
+            <label for="id_kilos">Baros:</label>
+            <input type="number" id="id_kilos" name="kilon" min="19" max="400" step="2">
+            <br>
+            <label for="id_revenue">Revenue:</label>
+            <input type="range" id="id_revenue" name="revenue" min="0" max="9" step="3">
+            <br>
+            <label for="id_url">Url:</label>
+            <input type="url" id="id_url" name="input_url" placeholder="example.com">
+            <br>
+            <label for="id_file">Choose file:</label>
+            <input type="file" id="id_file" name="input_file">
+            <br>
+            <label for="id_color">Choose file:</label>
+            <input type="color" id="id_color" name="input_color">
+            <br>
+            <label for="id_hidden">Hiden</label>
+            <input type="hidden" id="id_hidden" name="my_hidden"> <!--Hidden not shown. it is for backend use-->
+            <br>
+            <input type="submit" value="Απόστoλή"> <input type="reset" value="Καθαρισμός">
+        </form>
+
+        <label for="id_opinion_text">Comments: </label>
+        <br>
+        <textarea name="txt_opinion" id="id_opinion_text" cols="30" rows="10" placeholder="Tell us your story"></textarea>
+        <br>
+        <input type="submit" value="Απόστoλή"> <input type="reset" value="Καθαρισμός">
+
+    </article>
+    <br>
+    <article>
+        <h2>Check Boxies</h2>
+        <form action="/data_send/" method="GET">
+            <!-- On checkboxies label is after input statement -->
+            <input type="checkbox" id="id_checkbox" name="prefer" value="music_on" checked> <!-- default checked-->
+            <label for="id_checkbox">Music</label>
+            <br>
+            <input type="checkbox" id="id_checkbox2" name="prefer" value="photos_on">
+            <label for="id_checkbox2">Photos</label>
+            <br>         
+            <input type="submit" value="Απόστoλή"> <input type="reset" value="Καθαρισμός">
+        </form>
+        <h2>Radio buttons</h2>
+        <form action="/data_send/" method="GET">
+            <!-- On checkboxies label is after input statement -->
+            <input type="radio" id="id_radio1" name="prefer2" value="music_on" checked> <!-- default checked-->
+            <label for="id_radio1">Music</label>
+            <br>
+            <input type="radio" id="id_radio2" name="prefer2" value="photos_on">
+            <label for="id_radio2">Photos</label>
+            <br>
+            <input type="radio" id="id_radio3" name="prefer2" value="photos_on">
+            <label for="id_radio3">Videos</label>
+            <input type="submit" value="Απόστoλή"> <input type="reset" value="Καθαρισμός">
+        </form>
+
+        <h2>Drop down menu</h2>
+        <form action="">
+            <label for="id_drop_down">Select:</label>
+            <select name="payment" id="id_drop_down">
+                <option value="visa">VISA</option>
+                <option value="cash" selected>Cash</option>
+                <option value="card">Card</option>
+            </select>
+            <input type="submit" value="Απόστoλή"> <input type="reset" value="Καθαρισμός">
+
+        </form>
+
+        <br>
+        <form action="/data_send/">
+            <label for="id_drop_down2">Select:</label>
+            <select name="destination" id="id_drop_down2" multiple>
+                <optgroup>
+                    <option value="spain">Spain</option>
+                    <option value="italy" selected>Italy</option>
+                    <option value="greece">Greece</option>
+                </optgroup>
+                <optgroup>
+                    <option value="spain2">Spain2</option>
+                    <option value="italy2" selected>Italy2</option>
+                    <option value="greece2">Greece2</option>
+                </optgroup>
+            </select>    
+            <input type="submit" value="Απόστoλή"> <input type="reset" value="Καθαρισμός">
+            <br>
+        </form>
+        
+        <br>
+        <fieldset>
+            <legend>Choose</legend>
+            <label for="id_drop_down3">Select:</label>
+            <select name="payment3" id="id_drop_down3">
+                <option value="visa3">VISA</option>
+                <option value="cash3" selected>Cash</option>
+                <option value="card3">Card</option>
+            </select>
+            <br>
+            <form action="/data_send/">
+                <input type="radio" id="id_radio4" name="prefer4" value="music_on" checked> <!-- default checked-->
+                <label for="id_radio4">Music</label>
+                <br>
+                <input type="radio" id="id_radio5" name="prefer5" value="photos_on" checked> <!-- default checked-->
+                <label for="id_radio5">Photos</label>
+    
+            </form>
+            
+            <br>
+            <input type="submit" value="Απόστoλή"> <input type="reset" value="Καθαρισμός">
+        </fieldset>
+    </article>
+    <p>End</p>
+
+</body>
+</html>
